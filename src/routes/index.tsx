@@ -753,7 +753,7 @@ function Home() {
 
       {/* Footer */}
       <footer className="bg-primary py-14 text-primary-foreground/70">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 md:grid-cols-3">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <img
               src={logo.url}
