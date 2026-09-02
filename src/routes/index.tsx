@@ -247,6 +247,7 @@ const FAQS = [
 
 function Home() {
   const [sent, setSent] = useState(false);
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
