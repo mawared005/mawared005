@@ -781,6 +781,18 @@ function Home() {
             </ul>
           </div>
           <div>
+            <h3 className="font-display font-bold text-primary-foreground">خدماتنا</h3>
+            <ul className="mt-5 space-y-3 text-sm">
+              {SERVICES.slice(0, 6).map((s) => (
+                <li key={s.title}>
+                  <a href="#services" className="transition-colors hover:text-accent">
+                    {s.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
             <h3 className="font-display font-bold text-primary-foreground">تابعنا</h3>
             <ul className="mt-5 space-y-3 text-sm">
               <li>
