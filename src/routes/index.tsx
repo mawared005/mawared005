@@ -19,6 +19,17 @@ import {
   Wrench,
   Factory,
   ArrowLeft,
+  Award,
+  BadgeCheck,
+  ChevronDown,
+  ClipboardList,
+  Compass,
+  FileSearch,
+  Handshake,
+  LineChart,
+  Quote,
+  ShieldCheck,
+  Users,
 } from "lucide-react";
 
 import logo from "@/assets/radc-logo.png.asset.json";
