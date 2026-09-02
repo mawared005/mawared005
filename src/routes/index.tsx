@@ -554,6 +554,97 @@ function Home() {
         </div>
       </section>
 
+      {/* Testimonials */}
+      <section id="testimonials" className="border-y border-border bg-surface py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <h2 className="font-display text-3xl font-bold text-primary rule-accent md:text-4xl">
+            ماذا يقول عملاؤنا
+          </h2>
+          <p className="mt-6 max-w-2xl leading-relaxed text-muted-foreground">
+            ثقة عملائنا هي أثمن ما نحققه — شراكات طويلة الأمد مبنية على الجودة والنتائج.
+          </p>
+          <div className="mt-14 grid gap-6 md:grid-cols-3">
+            {TESTIMONIALS.map((t) => (
+              <figure key={t.name} className="flex flex-col border border-border bg-card p-8">
+                <Quote className="size-7 text-accent" />
+                <blockquote className="mt-5 flex-1 leading-relaxed text-foreground">
+                  {t.quote}
+                </blockquote>
+                <figcaption className="mt-6 border-t border-border pt-5">
+                  <div className="font-display font-bold text-primary">{t.name}</div>
+                  <div className="mt-1 text-xs text-muted-foreground">{t.role}</div>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="mx-auto max-w-5xl px-6 py-24">
+        <div className="text-center">
+          <h2 className="inline-block font-display text-3xl font-bold text-primary rule-accent after:mx-auto md:text-4xl">
+            الأسئلة الشائعة
+          </h2>
+          <p className="mx-auto mt-6 max-w-2xl leading-relaxed text-muted-foreground">
+            إجابات سريعة عن أكثر الأسئلة التي تصلنا حول خدماتنا وآلية العمل معنا.
+          </p>
+        </div>
+        <div className="mt-12 divide-y divide-border border border-border bg-card">
+          {FAQS.map((f, i) => (
+            <div key={f.q}>
+              <button
+                type="button"
+                onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                className="flex w-full items-center justify-between gap-6 px-6 py-5 text-start transition-colors hover:bg-surface"
+                aria-expanded={openFaq === i}
+              >
+                <span className="font-display font-bold text-primary">{f.q}</span>
+                <ChevronDown
+                  className={`size-5 shrink-0 text-steel transition-transform ${
+                    openFaq === i ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              {openFaq === i && (
+                <p className="px-6 pb-6 text-sm leading-relaxed text-muted-foreground">{f.a}</p>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-primary">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-8 px-6 py-16 md:flex-row">
+          <div>
+            <h2 className="font-display text-2xl font-bold text-primary-foreground md:text-3xl">
+              لديك مشروع زراعي أو بيئي؟ دعنا نتحدث
+            </h2>
+            <p className="mt-3 max-w-xl text-primary-foreground/75">
+              فريقنا جاهز لتقديم استشارة مجانية أولية والإجابة عن استفساراتك خلال يوم عمل واحد.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-4">
+            <a
+              href="https://wa.me/966569111192"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 bg-accent px-7 py-4 text-sm font-bold text-accent-foreground transition-transform hover:-translate-y-0.5"
+            >
+              تواصل عبر واتساب
+              <ArrowLeft className="size-4" />
+            </a>
+            <a
+              href="#contact"
+              className="border border-primary-foreground/25 px-7 py-4 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-foreground/10"
+            >
+              أرسل طلبك
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Contact */}
       <section id="contact" className="mx-auto max-w-7xl px-6 py-24">
         <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr]">
