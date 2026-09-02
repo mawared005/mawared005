@@ -287,9 +287,9 @@ function Home() {
             <img
               src={logo.url}
               alt="شعار شركة الموارد والتنمية الزراعية"
-              width={44}
-              height={62}
-              className="h-12 w-auto"
+              width={52}
+              height={74}
+              className="h-14 w-auto"
             />
             <span className="hidden leading-tight sm:block">
               <span className="block font-display text-base font-bold text-primary">
@@ -329,9 +329,9 @@ function Home() {
           alt="حقول ري محوري دائرية في الصحراء السعودية"
           width={1600}
           height={1008}
-          className="absolute inset-0 size-full object-cover opacity-25"
+          className="absolute inset-0 size-full object-cover opacity-45"
         />
-        <div className="absolute inset-0 bg-linear-to-l from-primary via-primary/85 to-primary/40" />
+        <div className="absolute inset-0 bg-linear-to-l from-primary via-primary/75 to-primary/35" />
         <div className="relative mx-auto max-w-7xl px-6 py-24 md:py-32">
           <div className="max-w-3xl rise">
             <span className="inline-block border border-accent/40 px-3 py-1 text-xs font-medium tracking-wide text-accent">
