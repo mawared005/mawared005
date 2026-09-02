@@ -19,6 +19,17 @@ import {
   Wrench,
   Factory,
   ArrowLeft,
+  Award,
+  BadgeCheck,
+  ChevronDown,
+  ClipboardList,
+  Compass,
+  FileSearch,
+  Handshake,
+  LineChart,
+  Quote,
+  ShieldCheck,
+  Users,
 } from "lucide-react";
 
 import logo from "@/assets/radc-logo.png.asset.json";
@@ -51,7 +62,9 @@ const NAV = [
   { href: "#home", label: "الرئيسية" },
   { href: "#about", label: "من نحن" },
   { href: "#services", label: "خدماتنا" },
+  { href: "#process", label: "منهجية العمل" },
   { href: "#vision", label: "رؤية 2030" },
+  { href: "#faq", label: "الأسئلة الشائعة" },
   { href: "#contact", label: "تواصل معنا" },
 ];
 
@@ -132,8 +145,109 @@ const VISION_POINTS = [
   "تنمية الثروة النباتية والحيوانية والسمكية كركائز للاستراتيجية الوطنية.",
 ];
 
+const VALUES = [
+  {
+    icon: BadgeCheck,
+    title: "الجودة والاعتمادية",
+    desc: "إجراءات عمل موثّقة وضوابط جودة في كل مرحلة، من الدراسة حتى التسليم النهائي.",
+  },
+  {
+    icon: Users,
+    title: "كوادر فنية متخصصة",
+    desc: "مهندسون وباحثون زراعيون وخبراء إداريون يجمعون بين المعرفة العلمية والخبرة الميدانية.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "الالتزام والشفافية",
+    desc: "التزام كامل بالمواعيد والميزانيات ووضوح تام في التقارير والتواصل مع العميل.",
+  },
+  {
+    icon: Award,
+    title: "حلول مستدامة",
+    desc: "ممارسات صديقة للبيئة وترشيد للموارد الطبيعية بما يتوافق مع أهداف التنمية المستدامة.",
+  },
+];
+
+const PROCESS_STEPS = [
+  {
+    icon: FileSearch,
+    step: "01",
+    title: "الاستماع والدراسة",
+    desc: "نستمع لاحتياجك ونقوم بتحليل أولي للموقع والموارد المتاحة والفرص الاستثمارية.",
+  },
+  {
+    icon: ClipboardList,
+    step: "02",
+    title: "دراسة الجدوى والتخطيط",
+    desc: "إعداد دراسات فنية واقتصادية شاملة ووضع خطة تنفيذ واضحة بالأهداف والجداول الزمنية.",
+  },
+  {
+    icon: Compass,
+    step: "03",
+    title: "التصميم والتنفيذ",
+    desc: "تنفيذ أعمال الإنشاء والتشييد وشبكات الري والتجهيزات وفق أعلى المعايير الفنية.",
+  },
+  {
+    icon: Wrench,
+    step: "04",
+    title: "التشغيل والصيانة",
+    desc: "تشغيل المشروع وتأهيل الكوادر وبرامج صيانة دورية لضمان استمرارية الإنتاج.",
+  },
+  {
+    icon: LineChart,
+    step: "05",
+    title: "المتابعة والتطوير",
+    desc: "قياس الأداء وتقديم تقارير دورية وتوصيات تطويرية لرفع العائد من المشروع.",
+  },
+];
+
+const TESTIMONIALS = [
+  {
+    quote:
+      "من الدراسة الأولى حتى التسليم، أثبت الفريق احترافية عالية والتزاماً بالمواعيد. مشروعنا الزراعي يعمل اليوم بكفاءة تفوق التوقعات.",
+    name: "مستثمر في القطاع الزراعي",
+    role: "صاحب مشروع بيوت محمية — الرياض",
+  },
+  {
+    quote:
+      "دراسة الجدوى التي قدّمها فريق الشركة كانت دقيقة وواقعية، وساعدتنا في اتخاذ قرار الاستثمار بثقة كاملة.",
+    name: "عميل دراسات جدوى",
+    role: "مشروع إنتاج حيواني — القصيم",
+  },
+  {
+    quote:
+      "أعمال تنسيق المسطحات الخضراء وشبكات الري نُفّذت بجودة ممتازة، والصيانة الدورية مستمرة دون أي ملاحظات.",
+    name: "عميل تنسيق مواقع",
+    role: "مجمع تجاري — الرياض",
+  },
+];
+
+const FAQS = [
+  {
+    q: "ما هي خدمات شركة الموارد والتنمية الزراعية؟",
+    a: "نقدّم منظومة متكاملة تشمل دراسات الجدوى الفنية والاقتصادية، الخدمات الزراعية والبيئية، مقاولات وإنشاء المزارع والبيوت المحمية، شبكات الري وحفر الآبار، تنسيق الحدائق والمشاتل، النقل والتخزين، والدعم الإداري والعلاقات العامة.",
+  },
+  {
+    q: "هل تقدّمون خدماتكم خارج مدينة الرياض؟",
+    a: "نعم، مقرّنا الرئيسي في الرياض ونخدم عملاءنا في جميع مناطق المملكة العربية السعودية وخارجها عبر أكثر من 14 موقعاً جغرافياً.",
+  },
+  {
+    q: "كيف يمكنني طلب دراسة جدوى لمشروع زراعي؟",
+    a: "يمكنك التواصل معنا عبر نموذج الموقع أو الاتصال المباشر على الرقم +966569111192، وسيحدد فريقنا اجتماعاً لفهم مشروعك ثم يقدّم عرضاً فنياً ومالياً مفصّلاً.",
+  },
+  {
+    q: "هل تشمل خدماتكم مرحلة التشغيل والصيانة بعد التنفيذ؟",
+    a: "بالتأكيد، نقدّم عقود تشغيل وصيانة شاملة للمزارع والبيوت المحمية وشبكات الري، تشمل المتابعة الدورية وتأهيل الكوادر وضمان استمرارية الإنتاج.",
+  },
+  {
+    q: "هل تتعاملون مع الجهات الحكومية والخاصة؟",
+    a: "نعم، نقدّم خدماتنا للقطاعين الحكومي والخاص، كما نقدّم خدمات المتابعة والتمثيل وإنهاء الإجراءات لدى الجهات الحكومية والخاصة.",
+  },
+];
+
 function Home() {
   const [sent, setSent] = useState(false);
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -317,6 +431,32 @@ function Home() {
         </div>
       </section>
 
+      {/* Why us */}
+      <section id="why" className="border-y border-border bg-card py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="max-w-2xl">
+            <h2 className="font-display text-3xl font-bold text-primary rule-accent md:text-4xl">
+              لماذا تختار الموارد والتنمية الزراعية؟
+            </h2>
+            <p className="mt-6 leading-relaxed text-muted-foreground">
+              نجمع بين الخبرة العلمية والكفاءة الميدانية لنقدّم حلولاً زراعية وبيئية تحقق نتائج
+              ملموسة لعملائنا في القطاعين الحكومي والخاص.
+            </p>
+          </div>
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {VALUES.map((v) => (
+              <div key={v.title} className="border border-border bg-background p-8 transition-shadow hover:shadow-panel">
+                <span className="flex size-12 items-center justify-center bg-primary/5">
+                  <v.icon className="size-6 text-steel" />
+                </span>
+                <h3 className="mt-6 font-display text-lg font-bold text-primary">{v.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{v.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Services */}
       <section id="services" className="border-y border-border bg-surface py-24">
         <div className="mx-auto max-w-7xl px-6">
@@ -342,6 +482,36 @@ function Home() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* Process */}
+      <section id="process" className="mx-auto max-w-7xl px-6 py-24">
+        <div className="max-w-2xl">
+          <h2 className="font-display text-3xl font-bold text-primary rule-accent md:text-4xl">
+            منهجية العمل
+          </h2>
+          <p className="mt-6 leading-relaxed text-muted-foreground">
+            خمس مراحل واضحة تأخذ مشروعك من الفكرة إلى إنتاج مستدام، بمتابعة وتقارير دورية في كل
+            خطوة.
+          </p>
+        </div>
+        <ol className="mt-14 grid gap-6 md:grid-cols-3 lg:grid-cols-5">
+          {PROCESS_STEPS.map((p, i) => (
+            <li key={p.step} className="relative border border-border bg-card p-7">
+              <div className="flex items-center justify-between">
+                <span className="font-display text-3xl font-bold text-accent" dir="ltr">
+                  {p.step}
+                </span>
+                <p.icon className="size-6 text-steel" />
+              </div>
+              <h3 className="mt-5 font-display font-bold text-primary">{p.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
+              {i < PROCESS_STEPS.length - 1 && (
+                <ArrowLeft className="absolute -left-4 top-1/2 hidden size-5 -translate-y-1/2 text-border lg:block" />
+              )}
+            </li>
+          ))}
+        </ol>
       </section>
 
       {/* Vision 2030 */}
@@ -380,6 +550,97 @@ function Home() {
               </div>
               <div className="text-xs font-medium text-accent-foreground/70">رؤية المملكة</div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section id="testimonials" className="border-y border-border bg-surface py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <h2 className="font-display text-3xl font-bold text-primary rule-accent md:text-4xl">
+            ماذا يقول عملاؤنا
+          </h2>
+          <p className="mt-6 max-w-2xl leading-relaxed text-muted-foreground">
+            ثقة عملائنا هي أثمن ما نحققه — شراكات طويلة الأمد مبنية على الجودة والنتائج.
+          </p>
+          <div className="mt-14 grid gap-6 md:grid-cols-3">
+            {TESTIMONIALS.map((t) => (
+              <figure key={t.name} className="flex flex-col border border-border bg-card p-8">
+                <Quote className="size-7 text-accent" />
+                <blockquote className="mt-5 flex-1 leading-relaxed text-foreground">
+                  {t.quote}
+                </blockquote>
+                <figcaption className="mt-6 border-t border-border pt-5">
+                  <div className="font-display font-bold text-primary">{t.name}</div>
+                  <div className="mt-1 text-xs text-muted-foreground">{t.role}</div>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="mx-auto max-w-5xl px-6 py-24">
+        <div className="text-center">
+          <h2 className="inline-block font-display text-3xl font-bold text-primary rule-accent after:mx-auto md:text-4xl">
+            الأسئلة الشائعة
+          </h2>
+          <p className="mx-auto mt-6 max-w-2xl leading-relaxed text-muted-foreground">
+            إجابات سريعة عن أكثر الأسئلة التي تصلنا حول خدماتنا وآلية العمل معنا.
+          </p>
+        </div>
+        <div className="mt-12 divide-y divide-border border border-border bg-card">
+          {FAQS.map((f, i) => (
+            <div key={f.q}>
+              <button
+                type="button"
+                onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                className="flex w-full items-center justify-between gap-6 px-6 py-5 text-start transition-colors hover:bg-surface"
+                aria-expanded={openFaq === i}
+              >
+                <span className="font-display font-bold text-primary">{f.q}</span>
+                <ChevronDown
+                  className={`size-5 shrink-0 text-steel transition-transform ${
+                    openFaq === i ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              {openFaq === i && (
+                <p className="px-6 pb-6 text-sm leading-relaxed text-muted-foreground">{f.a}</p>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-primary">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-8 px-6 py-16 md:flex-row">
+          <div>
+            <h2 className="font-display text-2xl font-bold text-primary-foreground md:text-3xl">
+              لديك مشروع زراعي أو بيئي؟ دعنا نتحدث
+            </h2>
+            <p className="mt-3 max-w-xl text-primary-foreground/75">
+              فريقنا جاهز لتقديم استشارة مجانية أولية والإجابة عن استفساراتك خلال يوم عمل واحد.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-4">
+            <a
+              href="https://wa.me/966569111192"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 bg-accent px-7 py-4 text-sm font-bold text-accent-foreground transition-transform hover:-translate-y-0.5"
+            >
+              تواصل عبر واتساب
+              <ArrowLeft className="size-4" />
+            </a>
+            <a
+              href="#contact"
+              className="border border-primary-foreground/25 px-7 py-4 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-foreground/10"
+            >
+              أرسل طلبك
+            </a>
           </div>
         </div>
       </section>
@@ -492,7 +753,7 @@ function Home() {
 
       {/* Footer */}
       <footer className="bg-primary py-14 text-primary-foreground/70">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 md:grid-cols-3">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <img
               src={logo.url}
@@ -514,6 +775,18 @@ function Home() {
                 <li key={n.href}>
                   <a href={n.href} className="transition-colors hover:text-accent">
                     {n.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-display font-bold text-primary-foreground">خدماتنا</h3>
+            <ul className="mt-5 space-y-3 text-sm">
+              {SERVICES.slice(0, 6).map((s) => (
+                <li key={s.title}>
+                  <a href="#services" className="transition-colors hover:text-accent">
+                    {s.title}
                   </a>
                 </li>
               ))}
