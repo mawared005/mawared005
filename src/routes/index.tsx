@@ -484,6 +484,36 @@ function Home() {
         </div>
       </section>
 
+      {/* Process */}
+      <section id="process" className="mx-auto max-w-7xl px-6 py-24">
+        <div className="max-w-2xl">
+          <h2 className="font-display text-3xl font-bold text-primary rule-accent md:text-4xl">
+            منهجية العمل
+          </h2>
+          <p className="mt-6 leading-relaxed text-muted-foreground">
+            خمس مراحل واضحة تأخذ مشروعك من الفكرة إلى إنتاج مستدام، بمتابعة وتقارير دورية في كل
+            خطوة.
+          </p>
+        </div>
+        <ol className="mt-14 grid gap-6 md:grid-cols-3 lg:grid-cols-5">
+          {PROCESS_STEPS.map((p, i) => (
+            <li key={p.step} className="relative border border-border bg-card p-7">
+              <div className="flex items-center justify-between">
+                <span className="font-display text-3xl font-bold text-accent" dir="ltr">
+                  {p.step}
+                </span>
+                <p.icon className="size-6 text-steel" />
+              </div>
+              <h3 className="mt-5 font-display font-bold text-primary">{p.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
+              {i < PROCESS_STEPS.length - 1 && (
+                <ArrowLeft className="absolute -left-4 top-1/2 hidden size-5 -translate-y-1/2 text-border lg:block" />
+              )}
+            </li>
+          ))}
+        </ol>
+      </section>
+
       {/* Vision 2030 */}
       <section id="vision" className="relative overflow-hidden bg-primary py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-[1.1fr_0.9fr]">
