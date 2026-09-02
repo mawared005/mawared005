@@ -62,7 +62,9 @@ const NAV = [
   { href: "#home", label: "الرئيسية" },
   { href: "#about", label: "من نحن" },
   { href: "#services", label: "خدماتنا" },
+  { href: "#process", label: "منهجية العمل" },
   { href: "#vision", label: "رؤية 2030" },
+  { href: "#faq", label: "الأسئلة الشائعة" },
   { href: "#contact", label: "تواصل معنا" },
 ];
 
