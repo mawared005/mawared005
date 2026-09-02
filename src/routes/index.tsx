@@ -431,6 +431,32 @@ function Home() {
         </div>
       </section>
 
+      {/* Why us */}
+      <section id="why" className="border-y border-border bg-card py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="max-w-2xl">
+            <h2 className="font-display text-3xl font-bold text-primary rule-accent md:text-4xl">
+              لماذا تختار الموارد والتنمية الزراعية؟
+            </h2>
+            <p className="mt-6 leading-relaxed text-muted-foreground">
+              نجمع بين الخبرة العلمية والكفاءة الميدانية لنقدّم حلولاً زراعية وبيئية تحقق نتائج
+              ملموسة لعملائنا في القطاعين الحكومي والخاص.
+            </p>
+          </div>
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {VALUES.map((v) => (
+              <div key={v.title} className="border border-border bg-background p-8 transition-shadow hover:shadow-panel">
+                <span className="flex size-12 items-center justify-center bg-primary/5">
+                  <v.icon className="size-6 text-steel" />
+                </span>
+                <h3 className="mt-6 font-display text-lg font-bold text-primary">{v.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{v.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Services */}
       <section id="services" className="border-y border-border bg-surface py-24">
         <div className="mx-auto max-w-7xl px-6">
