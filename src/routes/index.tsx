@@ -30,6 +30,13 @@ import {
   Quote,
   ShieldCheck,
   Users,
+  Wheat,
+  Bird,
+  Fish,
+  Trees,
+  Waves,
+  Tractor,
+
 } from "lucide-react";
 
 import logo from "@/assets/radc-logo.png.asset.json";
@@ -66,6 +73,8 @@ const NAV = [
   { href: "#home", label: "الرئيسية" },
   { href: "#about", label: "من نحن" },
   { href: "#services", label: "خدماتنا" },
+  { href: "#sectors", label: "القطاعات" },
+
   { href: "#process", label: "منهجية العمل" },
   { href: "#vision", label: "رؤية 2030" },
   { href: "#faq", label: "الأسئلة الشائعة" },
@@ -141,6 +150,77 @@ const SERVICES = [
     desc: "المتابعة والتمثيل لدى الجهات الحكومية والخاصة وخدمات الدعم الإداري.",
   },
 ];
+
+const SECTORS = [
+  {
+    icon: Wheat,
+    title: "الزراعة والغابات والثروة السمكية",
+    desc: "خدمات شاملة في الزراعة والغابات والصيد لمستقبل إنتاجي مستدام، مع حلول للزراعة المحمية والحقلية.",
+  },
+  {
+    icon: Bird,
+    title: "مزارع الدواجن والإنتاج الحيواني",
+    desc: "إنشاء وتجهيز مزارع تربية وإنتاج الدواجن بمختلف أنواعها، وتوريد المعدات والأنظمة التشغيلية.",
+  },
+  {
+    icon: Fish,
+    title: "الاستزراع السمكي",
+    desc: "تصميم وتنفيذ أحواض الاستزراع السمكي وأنظمة التدوير والمعالجة وضبط جودة المياه.",
+  },
+  {
+    icon: Trees,
+    title: "تنسيق المواقع والمشاتل",
+    desc: "الحدائق والمسطحات الخضراء وأعمال المشاتل وتنسيق المواقع للمشاريع السكنية والتجارية.",
+  },
+  {
+    icon: Waves,
+    title: "المياه والآبار",
+    desc: "حفر الآبار الأنبوبية واليدوية، ومد خطوط المياه وأبراج التخزين وصيانتها وإصلاحها.",
+  },
+  {
+    icon: Tractor,
+    title: "تأجير وتوريد المعدات الزراعية",
+    desc: "تأجير المعدات الزراعية وتوريد وتركيب البيوت المحمية ومستلزمات التشغيل.",
+  },
+];
+
+const CAPABILITIES = [
+  "مقاولات وإنشاءات مزارع الدواجن والأسماك والبيوت المحمية والمرافق الملحقة بها.",
+  "إنشاء الطرق والشوارع والأرصفة وتوريد مستلزماتها، وإنشاء وإصلاح وصيانة الجسور والأنفاق.",
+  "مد أنابيب الكهرباء والاتصالات وخطوط المياه بمختلف أنواعها وأقطارها.",
+  "إنشاء شبكات الري والسقيا والقنوات وأبراج تخزين المياه ومدّها وإصلاحها وصيانتها.",
+  "حفر آبار المياه الأنبوبية أو اليدوية وتجهيزها بأنظمة الضخ والتحكم.",
+  "تأجير المعدات الزراعية وتوريد وإنشاء وتركيب البيوت المحمية بمختلف أنواعها.",
+  "حلول رقمية ونماذج أعمال وخدمات إدارية وإنشائية داعمة لمنظومة الزراعة.",
+  "خدمات لوجستية متكاملة تشمل النقل والتخزين وسلاسل الإمداد للمشاريع الزراعية.",
+];
+
+const QUALITY_PILLARS = [
+  {
+    icon: Wrench,
+    title: "الأدوات",
+    desc: "معدات وتقنيات حديثة وأنظمة قياس دقيقة تضمن تنفيذاً مطابقاً للمواصفات.",
+  },
+  {
+    icon: Compass,
+    title: "التصميم",
+    desc: "تصاميم هندسية مدروسة تراعي طبيعة الموقع والمناخ وترشيد استهلاك الموارد.",
+  },
+  {
+    icon: BadgeCheck,
+    title: "الجودة",
+    desc: "الجودة أولويتنا القصوى: كوادر مؤهلة في التحليل والبحث والدراسات الفنية والاقتصادية.",
+  },
+];
+
+const COVERAGE = [
+  { region: "منطقة الرياض", note: "المقر الرئيسي وأغلب مشاريع الإنشاء والتشغيل" },
+  { region: "المنطقة الوسطى", note: "القصيم وحائل — مشاريع إنتاج نباتي وحيواني" },
+  { region: "المنطقة الشرقية والغربية", note: "بيوت محمية وشبكات ري ومشاريع لوجستية" },
+  { region: "خارج المملكة", note: "شراكات وخدمات استشارية للأسواق المجاورة" },
+];
+
+
 
 const VISION_POINTS = [
   "تعزيز الأمن الغذائي الوطني عبر مشاريع إنتاجية مستدامة.",
@@ -488,7 +568,99 @@ function Home() {
         </div>
       </section>
 
+      {/* Sectors */}
+      <section id="sectors" className="mx-auto max-w-7xl px-6 py-24">
+        <div className="max-w-2xl">
+          <h2 className="font-display text-3xl font-bold text-primary rule-accent md:text-4xl">
+            القطاعات التي نخدمها
+          </h2>
+          <p className="mt-6 leading-relaxed text-muted-foreground">
+            نعمل عبر سلسلة القيمة الزراعية كاملة، من الإنتاج النباتي والحيواني والسمكي إلى البنية
+            التحتية والمياه والمعدات.
+          </p>
+        </div>
+        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {SECTORS.map((s) => (
+            <article
+              key={s.title}
+              className="border-r-2 border-accent bg-card p-8 shadow-card"
+            >
+              <s.icon className="size-7 text-steel" />
+              <h3 className="mt-5 font-display text-lg font-bold text-primary">{s.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Capabilities */}
+      <section className="border-y border-border bg-card py-24">
+        <div className="mx-auto grid max-w-7xl gap-14 px-6 lg:grid-cols-[1fr_1.1fr]">
+          <div>
+            <h2 className="font-display text-3xl font-bold text-primary rule-accent md:text-4xl">
+              قدراتنا التنفيذية
+            </h2>
+            <p className="mt-6 leading-relaxed text-muted-foreground">
+              اعتماداً على شبكة الروابط والخدمات اللوجستية التي تمتلكها الشركة، ننفّذ أعمالاً
+              متنوعة تغطي احتياجات المشروع الزراعي من البنية التحتية حتى التشغيل.
+            </p>
+            <div className="mt-10 grid gap-6 sm:grid-cols-3">
+              {QUALITY_PILLARS.map((p) => (
+                <div key={p.title} className="border-t-2 border-accent pt-5">
+                  <p.icon className="size-6 text-steel" />
+                  <h3 className="mt-4 font-display font-bold text-primary">{p.title}</h3>
+                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{p.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <ul className="grid gap-px bg-border">
+            {CAPABILITIES.map((c) => (
+              <li key={c} className="flex items-start gap-4 bg-card p-5">
+                <BadgeCheck className="mt-0.5 size-5 shrink-0 text-accent" />
+                <span className="text-sm leading-relaxed text-foreground">{c}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Coverage */}
+      <section className="mx-auto max-w-7xl px-6 py-24">
+        <div className="max-w-2xl">
+          <h2 className="font-display text-3xl font-bold text-primary rule-accent md:text-4xl">
+            نطاق التغطية والشراكات
+          </h2>
+          <p className="mt-6 leading-relaxed text-muted-foreground">
+            شبكة واسعة من الشركاء والعملاء الراضين، من المملكة العربية السعودية إلى خارجها، عبر
+            أكثر من 14 موقعاً جغرافياً.
+          </p>
+        </div>
+        <div className="mt-12 grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
+          {COVERAGE.map((c) => (
+            <div key={c.region} className="bg-card p-8">
+              <MapPin className="size-6 text-accent" />
+              <h3 className="mt-5 font-display font-bold text-primary">{c.region}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.note}</p>
+            </div>
+          ))}
+        </div>
+        <div className="mt-10 flex flex-wrap items-center gap-4 border border-border bg-surface p-8">
+          <Handshake className="size-7 text-steel" />
+          <p className="flex-1 min-w-64 leading-relaxed text-foreground">
+            نقيس نجاحنا برضا عملائنا، ونعمل جنباً إلى جنب معهم لتحقيق رؤية المملكة 2030.
+          </p>
+          <a
+            href="#contact"
+            className="rounded-sm bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-steel"
+          >
+            كن شريكاً لنا
+          </a>
+        </div>
+      </section>
+
       {/* Process */}
+
       <section id="process" className="mx-auto max-w-7xl px-6 py-24">
         <div className="max-w-2xl">
           <h2 className="font-display text-3xl font-bold text-primary rule-accent md:text-4xl">
