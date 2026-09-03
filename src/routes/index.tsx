@@ -55,6 +55,8 @@ export const Route = createFileRoute("/")({
         content:
           "حلول زراعية وبيئية متكاملة من الدراسة والتصميم حتى التنفيذ والتشغيل — الرياض، المملكة العربية السعودية.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Home,
