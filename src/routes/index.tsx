@@ -38,6 +38,8 @@ import greenhouse from "@/assets/greenhouse.jpg";
 import aboutField from "@/assets/about-field.jpg";
 import { Toaster } from "@/components/ui/sonner";
 
+const logoUrl = new URL(logo.url, "https://mawared005.lovable.app").href;
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -285,7 +287,7 @@ function Home() {
         <nav className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-3">
           <a href="#home" className="flex items-center gap-3">
             <img
-              src={logo.url}
+              src={logoUrl}
               alt="شعار شركة الموارد والتنمية الزراعية"
               width={52}
               height={74}
@@ -756,7 +758,7 @@ function Home() {
         <div className="mx-auto grid max-w-7xl gap-10 px-6 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <img
-              src={logo.url}
+              src={logoUrl}
               alt="شعار شركة الموارد والتنمية الزراعية"
               width={44}
               height={62}
