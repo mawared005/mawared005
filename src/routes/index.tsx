@@ -30,6 +30,13 @@ import {
   Quote,
   ShieldCheck,
   Users,
+  Wheat,
+  Bird,
+  Fish,
+  Trees,
+  Waves,
+  Tractor,
+
 } from "lucide-react";
 
 import logo from "@/assets/radc-logo.png.asset.json";
