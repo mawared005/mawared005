@@ -36,8 +36,18 @@ import {
   Trees,
   Waves,
   Tractor,
-
+  Facebook,
+  Instagram,
+  Twitter,
+  MessageCircle,
 } from "lucide-react";
+
+const SOCIALS = [
+  { icon: MessageCircle, label: "واتساب", href: "https://wa.me/966569111192" },
+  { icon: Instagram, label: "إنستغرام", href: "https://www.instagram.com/emawared/" },
+  { icon: Twitter, label: "إكس (تويتر)", href: "https://x.com/mawared005" },
+  { icon: Facebook, label: "فيسبوك", href: "https://www.facebook.com/MAWARED05/" },
+];
 
 import logo from "@/assets/radc-logo.png.asset.json";
 import heroFields from "@/assets/hero-fields.jpg";
@@ -859,6 +869,26 @@ function Home() {
                 </div>
               ))}
             </div>
+            <div className="mt-10">
+              <div className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                تابعنا على
+              </div>
+              <div className="mt-4 flex gap-3">
+                {SOCIALS.map((s) => (
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={s.label}
+                    title={s.label}
+                    className="flex size-11 items-center justify-center border border-border bg-card text-steel transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground"
+                  >
+                    <s.icon className="size-5" />
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
 
           <form onSubmit={onSubmit} className="bg-surface p-8 md:p-10">
@@ -970,47 +1000,34 @@ function Home() {
           </div>
           <div>
             <h3 className="font-display font-bold text-primary-foreground">تابعنا</h3>
-            <ul className="mt-5 space-y-3 text-sm">
-              <li>
+            <div className="mt-5 flex gap-3">
+              {SOCIALS.map((s) => (
                 <a
-                  href="https://wa.me/966569111192"
+                  key={s.label}
+                  href={s.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="transition-colors hover:text-accent"
+                  aria-label={s.label}
+                  title={s.label}
+                  className="flex size-10 items-center justify-center border border-primary-foreground/20 text-primary-foreground/70 transition-colors hover:border-accent hover:bg-accent hover:text-accent-foreground"
                 >
-                  واتساب
+                  <s.icon className="size-4" />
                 </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.instagram.com/emawared/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="transition-colors hover:text-accent"
-                >
-                  إنستغرام
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://x.com/mawared005"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="transition-colors hover:text-accent"
-                >
-                  إكس (تويتر)
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.facebook.com/MAWARED05/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="transition-colors hover:text-accent"
-                >
-                  فيسبوك
-                </a>
-              </li>
+              ))}
+            </div>
+            <ul className="mt-6 space-y-3 text-sm">
+              {SOCIALS.map((s) => (
+                <li key={s.label}>
+                  <a
+                    href={s.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="transition-colors hover:text-accent"
+                  >
+                    {s.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
